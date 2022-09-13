@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardViewTodo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/medium_margin"
+    android:layout_marginVertical="@dimen/tiny_margin"
+    android:checkable="true"
+    app:cardElevation="3dp"
+    app:strokeColor="@color/teal_a400"
+    app:strokeWidth="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/tiny_margin">
+
+        <CheckBox
+            android:id="@+id/checkboxTodoStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/small_margin"
+            android:checked="false" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextAppearance.Material3.HeadlineSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/tiny_margin"
+            android:layout_toEndOf="@+id/checkboxTodoStatus"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/default_title"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNote"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_marginHorizontal="@dimen/tiny_margin"
+            android:layout_marginVertical="@dimen/tiny_margin"
+            android:layout_toStartOf="@+id/imvCheckedTodo"
+            android:layout_toEndOf="@+id/checkboxTodoStatus"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/default_note"
+            android:textColor="@color/grey_200_dark" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTime"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNote"
+            android:layout_marginHorizontal="@dimen/tiny_margin"
+            android:layout_marginTop="@dimen/tiny_margin"
+            android:layout_toEndOf="@+id/checkboxTodoStatus"
+            android:drawableStart="@drawable/ic_alarm_16"
+            android:drawablePadding="@dimen/tiny_margin"
+            android:drawableTint="?android:attr/textColorPrimary"
+            android:text="@string/default_time"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imvCheckedTodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/large_margin"
+            android:src="@drawable/ic_check_circle"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/circle_checkbox.xml" value="0.3555" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/circle_checkbox_checked.xml" value="0.206" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/circle_checkbox_unchecked.xml" value="0.206" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/folder_open.xml" value="0.296" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_alarm.xml" value="0.374" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_alarm_12.xml" value="0.374" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_alarm_16.xml" value="0.3075" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_alarm_24.xml" value="0.3055" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_back.xml" value="0.301" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_cancel.xml" value="0.23" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_check.xml" value="0.23" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_check_circle.xml" value="0.296" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_chedule.xml" value="0.2735" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_circle.xml" value="0.1685" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_circle_24.xml" value="0.296" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_clock.xml" value="0.248" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_delete.xml" value="0.316" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_done.xml" value="0.316" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_edit.xml" value="0.1685" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_expand_less.xml" value="0.1685" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_folder.xml" value="0.3055" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_group_note.xml" value="0.296" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_new_todos.xml" value="0.3055" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_rename.xml" value="0.3075" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_restore.xml" value="0.3075" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_search.xml" value="0.2735" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_select_all.xml" value="0.2735" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_send_to.xml" value="0.2735" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_share.xml" value="0.374" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_sort.xml" value="0.2735" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_tag_deleted.xml" value="0.316" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_tag_done.xml" value="0.374" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_todos.xml" value="0.1685" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ripple_textview_button.xml" value="0.3075" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/search_view.xml" value="0.3075" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/strike_through.xml" value="0.206" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/bottom_sheet_create_new_group.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/bottom_sheet_date_and_time_picker.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/bottom_sheet_group_picker.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/bottom_sheet_share_todo.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/dialog_change_todo_name.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/dialog_date_and_time_picker.xml" value="0.264" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/dialog_group_picker.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_done.xml" value="0.28804347826086957" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_garbage.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_gon_going.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_home2.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_on_going.xml" value="0.264" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_share_todo_in_image_format.xml" value="0.264" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_view_group.xml" value="0.264" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_view_todo.xml" value="0.4" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_add_new_group.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_deleted.xml" value="0.36822916666666666" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_deleted_todo.xml" value="0.4" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_finished.xml" value="0.36822916666666666" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_finished_todo.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_group.xml" value="0.4" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_group_state_2.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_new_group.xml" value="0.4" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_todo.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_unfinished.xml" value="0.30299145299145297" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_unfinished_todo.xml" value="0.4" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/toolbar_edit_note.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/toolbar_view_mode.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/toolbar_view_note.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu-v26/home_naviagtion_toolbar.xml" value="0.36822916666666666" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/home_bottom_toolbar_garbage_mode.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/home_bottom_toolbar_only_one_group.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/home_bottom_toolbar_only_todo_mode.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/home_bottom_toolbar_with_group_mode.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/home_edit_toolbar.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/home_naviagtion_toolbar.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/home_navigation_toolbar.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/menu_for_bottom_nav_main_activity.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/menu_for_navigation_main_activity.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/menu_main.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/naviagtion_toolbar_menu.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/view_deleted_todo_menu.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/view_group_menu.xml" value="0.36822916666666666" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/view_todo_menu.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/view_todo_menu_edit_mode.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/view_todo_menu_view_mode.xml" value="0.3692708333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="androidx.room.TypeConverter" />
+    </list>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

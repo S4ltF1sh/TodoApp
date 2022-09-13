@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardViewGroup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/medium_margin"
+    android:layout_marginVertical="@dimen/small_margin"
+    app:cardElevation="@dimen/tiny_margin"
+    app:strokeColor="@color/teal_a400"
+    app:strokeWidth="0dp"
+    android:checkable="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/imvIcNoteGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/tiny_margin"
+            android:layout_marginBottom="@dimen/tiny_margin"
+            android:src="@drawable/ic_todos"
+            tools:ignore="ContentDescription" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/medium_margin"
+            android:layout_toStartOf="@+id/tvNumOfTodo"
+            android:layout_toEndOf="@+id/imvIcNoteGroup"
+            android:ellipsize="end"
+            android:maxLength="50"
+            android:text="@string/default_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNumOfTodo"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/large_margin"
+            android:text="@string/default_number" />
+
+        <ImageView
+            android:id="@+id/imvCheckedTodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/large_margin"
+            android:src="@drawable/ic_check_circle"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

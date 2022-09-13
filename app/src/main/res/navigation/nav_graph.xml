@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/viewTodoFragment"
+        android:name="com.example.todo.fragments.todo.TodoFragment"
+        android:label="fragment_view_todo"
+        tools:layout="@layout/fragment_todo" >
+        <action
+            android:id="@+id/action_viewTodoFragment_to_shareTodoInImageFormatFragment"
+            app:destination="@id/shareTodoInImageFormatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewGroupFragment"
+        android:name="com.example.todo.fragments.group.GroupFragment"
+        android:label="fragment_view_group"
+        tools:layout="@layout/fragment_group">
+        <action
+            android:id="@+id/action_viewGroupFragment_to_viewTodoFragment"
+            app:destination="@id/viewTodoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.todo.fragments.home.HomeFragment"
+        android:label="fragment_home2"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_viewGroupFragment"
+            app:destination="@id/viewGroupFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewTodoFragment"
+            app:destination="@id/viewTodoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shareTodoInImageFormatFragment"
+        android:name="com.example.todo.fragments.share.ShareTodoInImageFormatFragment"
+        android:label="fragment_share_todo_in_image_format"
+        tools:layout="@layout/fragment_share_todo_in_image_format" />
+</navigation>

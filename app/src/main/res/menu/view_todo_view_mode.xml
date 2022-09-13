@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itemMoveTo"
+        android:title="@string/action_move_to"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/itemAddToMainScreen"
+        android:title="@string/action_add_to_main_screen"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/itemDelete"
+        android:title="@string/action_delete"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/itemShare"
+        android:icon="@drawable/ic_share"
+        android:title="@string/action_share"
+        app:showAsAction="ifRoom" />
+</menu>

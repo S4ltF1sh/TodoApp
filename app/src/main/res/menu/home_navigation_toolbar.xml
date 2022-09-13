@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/itemOnGoing"
+        android:icon="@drawable/ic_group_note"
+        android:iconTint="@color/tab_layout_icon_color"
+        app:showAsAction="ifRoom"
+        tools:ignore="MenuTitle"
+        tools:targetApi="o" />
+
+    <item
+        android:id="@+id/itemGarbage"
+        android:icon="@drawable/ic_delete"
+        android:iconTint="@color/tab_layout_icon_color"
+        app:showAsAction="ifRoom"
+        tools:ignore="MenuTitle"
+        tools:targetApi="o" />
+</menu>

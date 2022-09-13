@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">TODO</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="default_title">Do something</string>
+    <string name="default_time">Thứ 6 26/8/2022 | 12:39</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="expand_more_button">Show Note of this Todo</string>
+    <string name="default_note">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a, ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae, molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor bibendum, vel congue leo egestas.\n\n</string>
+    <string name="todo_status_done">todo was done</string>
+    <string name="todo_status_deleted">todo was deleted</string>
+    <string name="default_number">10</string>
+    <string name="title">Tiêu đề...</string>
+    <string name="note">Lưu ý...</string>
+    <string name="ungroup">Chưa phân loại</string>
+    <string name="set_time">Đặt nhắc nhở</string>
+    <string name="btn_cancel">Huỷ</string>
+    <string name="btn_OK">OK</string>
+    <string name="action_change_name">Đổi tên</string>
+    <string name="action_delete">Xoá</string>
+    <string name="action_move_to">Chuyển tới</string>
+    <string name="action_add_to_main_screen">Thêm vào màn hình chính</string>
+    <string name="action_share">Chia sẻ</string>
+    <string name="action_save">Save Note</string>
+    <string name="default_group_name_null">Chưa phân loại</string>
+    <string name="default_time_null">Chưa hẹn giờ</string>
+    <string name="new_group">Nhóm mới</string>
+    <string name="create_new_group">Tạo nhóm mới</string>
+    <string name="new_group_name">Tên nhóm mới</string>
+    <string name="pick_group">Chọn nhóm</string>
+    <string name="remove_from_app">Remove from app</string>
+    <string name="restore_todo">restore todo</string>
+    <string name="share_todo_in_text_format">Chia sẻ việc cần làm dưới dạng văn bản</string>
+    <string name="share_todo_in_image_format">Chia sẻ việc cần làm dưới dạng ảnh</string>
+    <string name="share_todo">Chia sẻ việc cần làm</string>
+    <string name="save_to_device">Lưu vào thiết bị</string>
+    <string name="select_all_item">select all item</string>
+    <string name="action_check_done">Hoàn thành</string>
+    <string name="action_delete2">Xoá vĩnh viễn</string>
+    <string name="action_restore">Khôi phục</string>
+</resources>

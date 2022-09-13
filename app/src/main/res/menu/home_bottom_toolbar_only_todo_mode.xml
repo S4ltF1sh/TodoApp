@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itemDeleteAtBottom"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/action_delete"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/itemCheckDoneAtBottom"
+        android:icon="@drawable/ic_check"
+        app:showAsAction="ifRoom"
+        android:title="@string/action_check_done"/>
+
+    <item
+        android:id="@+id/itemSendToAtBottom"
+        android:icon="@drawable/ic_send_to"
+        android:title="@string/action_move_to"
+        app:showAsAction="ifRoom" />
+</menu>
