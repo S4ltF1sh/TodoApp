@@ -3,7 +3,7 @@ Chức năng:
 
 | Chức năng | Mô tả |
 | --- | --- |
-| **Tạo mới Todo** > Bấm vào FAB ở góc dưới màn hình để thêm mới | ![Tạo mới Todo](https://user-images.githubusercontent.com/84552830/192386174-1416b8f6-1cfe-4043-af0b-762f90ae2d4b.gif) |
+| **Tạo mới Todo**  > Bấm vào FAB ở góc dưới màn hình để thêm mới | ![Tạo mới Todo](https://user-images.githubusercontent.com/84552830/192386174-1416b8f6-1cfe-4043-af0b-762f90ae2d4b.gif) |
 | Sửa Todo | ![Sửa Todo](https://user-images.githubusercontent.com/84552830/192385410-c6a29545-e301-456e-b5a9-3b096450b12a.gif) |
 | Xoá và khôi phục Todo | ![Xoá và khôi phục Todo](https://user-images.githubusercontent.com/84552830/192386217-e2682cd0-4b07-4e3c-88c5-9bd89cc01b75.gif) |
 | Tìm kiếm Todo | ![Tìm kiếm Todo](https://user-images.githubusercontent.com/84552830/192385446-daad8d95-3a7e-4290-b20e-0a7b6fe567a7.gif) |
