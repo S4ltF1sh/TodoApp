@@ -4,7 +4,15 @@ Chức năng:
 | Chức năng | Mô tả |
 | --- | --- |
 | Tạo mới Todo | ![Tạo mới Todo](https://user-images.githubusercontent.com/84552830/192376193-4d5d7746-8af9-4b16-8d43-f1640044e2b2.gif) |
-| git diff | Show file differences that haven't been staged |
+| Sửa Todo | ![Sửa Todo](https://user-images.githubusercontent.com/84552830/192385410-c6a29545-e301-456e-b5a9-3b096450b12a.gif) |
+| Xoá và khôi phục Todo | ![Xoá và khôi phục Todo](https://user-images.githubusercontent.com/84552830/192377501-709eb820-10f3-4ad9-9cd2-6fb80bcfe51b.gif) |
+| Tìm kiếm Todo | ![Tìm kiếm Todo](https://user-images.githubusercontent.com/84552830/192385446-daad8d95-3a7e-4290-b20e-0a7b6fe567a7.gif) |
+| Chia sẻ Todo | ![Chia sẻ Todo](https://user-images.githubusercontent.com/84552830/192385543-c282f12d-f6ef-4066-82bb-0655f0670699.gif) |
+| Một số thao tác với Group | ![Một số thao tác với Group (2)](https://user-images.githubusercontent.com/84552830/192385591-5403eb2b-e4c6-4648-9c5f-fa448b64a0c0.gif) |
+| Multi Select | ![Multi Select](https://user-images.githubusercontent.com/84552830/192385656-34b7a055-2ff9-4ee6-9461-f01536568848.gif) |
+| Thêm và nhận nhắc nhở | ![Thêm nhắc nhở](https://user-images.githubusercontent.com/84552830/192385839-8dd4fe63-8ced-4b17-8bab-9b0541f5c792.gif) 
+![Nhận nhắc nhở](https://user-images.githubusercontent.com/84552830/192385913-479db436-47ea-42fd-9b67-41d5281cdf73.gif) |
+| Widget cơ bản | ![Widget Cơ bản](https://user-images.githubusercontent.com/84552830/192385968-15dec4bd-3ac2-48a7-9cb5-52823c4ca911.gif) |
 
 
 
