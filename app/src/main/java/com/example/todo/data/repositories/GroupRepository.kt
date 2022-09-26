@@ -6,6 +6,7 @@ import com.example.todo.data.models.GroupWithTodos
 import java.util.*
 
 class GroupRepository(private val groupDao: GroupDao) {
+    fun getAll(): List<Group> = groupDao.getAll()
     fun getGroupByTitle(title: String): Group? = groupDao.getByTitle(title)
     fun getGroupsWithTodos(): List<GroupWithTodos>? = groupDao.getGroupsWithTodos()
     fun getGroupsWithTodosByGroupName(groupName: String): GroupWithTodos =

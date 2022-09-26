@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardViewTodo"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/medium_margin"
     android:layout_marginVertical="@dimen/tiny_margin"
     android:checkable="true"
+    android:transitionName="cardViewTodo"
     app:cardElevation="3dp"
     app:strokeColor="@color/teal_a400"
     app:strokeWidth="0dp">
@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/tvTitle"
-            style="@style/TextAppearance.Material3.HeadlineSmall"
+            style="@style/TextAppearance.Material3.TitleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/tiny_margin"
@@ -35,17 +35,18 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="@string/default_title"
+            android:textColor="@color/title_by_enable_state_color"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvNote"
-            style="@style/TextAppearance.Material3.TitleLarge"
+            style="@style/TextAppearance.Material3.BodyLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTitle"
+            android:layout_alignParentEnd="true"
             android:layout_marginHorizontal="@dimen/tiny_margin"
             android:layout_marginVertical="@dimen/tiny_margin"
-            android:layout_toStartOf="@+id/imvCheckedTodo"
             android:layout_toEndOf="@+id/checkboxTodoStatus"
             android:ellipsize="end"
             android:maxLines="1"
@@ -66,17 +67,5 @@
             android:drawableTint="?android:attr/textColorPrimary"
             android:text="@string/default_time"
             android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/imvCheckedTodo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/large_margin"
-            android:src="@drawable/ic_check_circle"
-            android:visibility="gone"
-            tools:ignore="ContentDescription" />
-
     </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

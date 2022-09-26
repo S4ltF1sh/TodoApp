@@ -10,7 +10,8 @@
     app:cardElevation="@dimen/tiny_margin"
     app:strokeColor="@color/teal_a400"
     app:strokeWidth="0dp"
-    android:checkable="true">
+    android:checkable="true"
+    android:transitionName="cardViewGroup">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -40,7 +41,8 @@
             android:ellipsize="end"
             android:maxLength="50"
             android:text="@string/default_title"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#ebfffc"/>
 
         <TextView
             android:id="@+id/tvNumOfTodo"

@@ -13,7 +13,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_todo" />
+        tools:listitem="@layout/item_todo"
+        android:layoutAnimation="@anim/recyclerview_anim_layout"/>
+
+    <TextView
+        android:id="@+id/tvShrugFace"
+        style="@style/TextAppearance.Material3.HeadlineSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/shrug_face"
+        android:translationZ="0dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"
@@ -21,10 +31,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/large_margin"
-        app:backgroundTint="@color/blue_grey_900_dark"
+        app:backgroundTint="@color/teal_a400"
         app:srcCompat="@drawable/ic_add"
-        app:tint="@color/teal_a400"
+        app:tint="@color/background_icon"
         app:fabSize="auto"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck"
+        android:transitionName="fabAdd"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

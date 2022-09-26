@@ -42,4 +42,8 @@ class TodoRepository(private val todoDao: TodoDao) {
 
     fun changeGroup(id: Int, newGroupName: String) =
         todoDao.changeGroup(id, newGroupName)
+
+    fun changeGroup2(oldGroupName: String, newGroupName: String) {
+        todoDao.changeGroup2(oldGroupName, newGroupName)
+    }
 }

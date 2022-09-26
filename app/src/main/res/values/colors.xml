@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#ebfffc</color>
     <color name="blue_grey_900_dark">#000A12</color>
     <color name="light_pink">#F490A5</color>
     <color name="pink_100">#ffb2dd</color>
@@ -18,4 +18,14 @@
     <color name="grey_for_body_text">#616161</color>
     <color name="orange_a400">#ff9100</color>
     <color name="grey">#424242</color>
+    <color name="background_main">#06070e</color>
+    <color name="background_cardview">#080A16</color>
+    <color name="background_icon">#141c36</color>
+    <color name="red">#ef476f</color>
+    <color name="amber">#e9d758</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
 </resources>

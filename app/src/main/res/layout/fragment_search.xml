@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:transitionName="searchFragment"
+    tools:context=".fragments.searchfragment.SearchFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/search_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:clipChildren="false">
+
+        <EditText
+            android:id="@+id/edtSearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_size"
+            android:layout_marginHorizontal="@dimen/extreme_large_margin2"
+            android:layout_marginVertical="@dimen/small_margin"
+            android:background="@drawable/search_view"
+            android:drawableStart="@drawable/ic_search"
+            android:imeOptions="flagNoExtractUi|actionSearch"
+            android:inputType="textNoSuggestions"
+            android:paddingHorizontal="@dimen/large_margin"
+            tools:ignore="Autofill,LabelFor" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchedTodos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:layoutAnimation="@anim/recyclerview_anim_layout"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:listitem="@layout/item_todo" />
+
+    <TextView
+        android:id="@+id/tvShrugFace"
+        style="@style/TextAppearance.Material3.HeadlineSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/shrug_face"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

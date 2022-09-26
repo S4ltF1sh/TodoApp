@@ -7,11 +7,6 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/itemAddToMainScreen"
-        android:title="@string/action_add_to_main_screen"
-        app:showAsAction="never" />
-
-    <item
         android:id="@+id/itemDelete"
         android:title="@string/action_delete"
         app:showAsAction="never" />

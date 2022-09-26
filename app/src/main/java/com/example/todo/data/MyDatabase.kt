@@ -11,7 +11,7 @@ import com.example.todo.common.Const.TODO_DATABASE_NAME
 import com.example.todo.data.models.OnGoingTodo
 
 
-@Database(entities = [Todo::class, Group::class], views = [OnGoingTodo::class], version = 2)
+@Database(entities = [Todo::class, Group::class], views = [OnGoingTodo::class], version = 1)
 @TypeConverters(DateConverter::class)
 abstract class MyDatabase : RoomDatabase() {
     abstract val todoDao: TodoDao

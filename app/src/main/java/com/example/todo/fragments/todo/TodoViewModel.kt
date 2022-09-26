@@ -38,7 +38,6 @@ class TodoViewModel(
     private val todoLiveData: MutableLiveData<Todo> = MutableLiveData()
     private lateinit var todo: Todo
 
-    //
     fun setData(todo: Todo) {
         this.todo = todo
         todoLiveData.value = todo
@@ -92,6 +91,7 @@ class TodoViewModel(
         todoRepository.addTodo(newTodo)
         todo = newTodo
         todoLiveData.value = todo
+
         Log.d("id newTodo", newTodo.id.toString())
         Log.d("id current Todo", todo.id.toString())
     }

@@ -1,5 +1,7 @@
 package com.example.todo.data.models.todo
 
+import android.os.Parcel
+import android.os.Parcelable
 import androidx.room.*
 import com.example.todo.data.models.Item
 import com.example.todo.common.TodoStatus

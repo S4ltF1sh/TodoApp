@@ -1,5 +1,6 @@
 package com.example.todo.utils
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.view.View
 import com.example.todo.R
@@ -12,6 +13,8 @@ object TodoVisibility {
         currentTodo: Todo,
         itemTodoBinding: ItemTodoBinding
     ) {
+        itemTodoBinding.cardViewTodo.isChecked = false
+        itemTodoBinding.checkboxTodoStatus.isChecked = false
         if (currentTodo.title.isEmpty())
             itemTodoBinding.tvTitle.visibility = View.GONE
         else
@@ -23,6 +26,7 @@ object TodoVisibility {
         else
             itemTodoBinding.tvNote.visibility = View.VISIBLE
 
+        @SuppressLint("ResourceAsColor")
         if (currentTodo.todoStatus != TodoStatus.ON_GOING) {
             itemTodoBinding.apply {
                 tvTitle.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG

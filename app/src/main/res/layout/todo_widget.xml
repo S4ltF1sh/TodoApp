@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:divider="@drawable/divider"
+    android:orientation="vertical"
+    android:padding="@dimen/medium_margin"
+    android:showDividers="middle">
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingBottom="@dimen/tiny_margin">
+
+        <TextView
+            android:id="@+id/tvTodo"
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/imvAdd"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/todo"
+            android:textColor="@color/white"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:id="@+id/imvAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_add"
+            app:tint="@color/white"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/todo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingVertical="@dimen/tiny_margin">
+
+        <TextView
+            android:id="@+id/tvTitle1"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/imvClock1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/todo_null"
+            android:textColor="@color/white"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:id="@+id/imvClock1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:padding="4dp"
+            android:src="@drawable/ic_alarm_16"
+            tools:ignore="ContentDescription"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/todo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingVertical="@dimen/tiny_margin">
+
+        <TextView
+            android:id="@+id/tvTitle2"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/imvClock2"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/todo_null"
+            android:textColor="@color/white"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:id="@+id/imvClock2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:padding="4dp"
+            android:src="@drawable/ic_alarm_16"
+            tools:ignore="ContentDescription"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/todo3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingVertical="@dimen/tiny_margin">
+
+        <TextView
+            android:id="@+id/tvTitle3"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/imvClock3"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/todo_null"
+            android:textColor="@color/white"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:id="@+id/imvClock3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:padding="4dp"
+            android:src="@drawable/ic_alarm_16"
+            tools:ignore="ContentDescription"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/todo4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingVertical="@dimen/tiny_margin">
+
+        <TextView
+            android:id="@+id/tvTitle4"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/imvClock4"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/todo_null"
+            android:textColor="@color/white"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:id="@+id/imvClock4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:padding="4dp"
+            android:src="@drawable/ic_alarm_16"
+            tools:ignore="ContentDescription"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</LinearLayout>

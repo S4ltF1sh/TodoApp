@@ -34,6 +34,9 @@ interface TodoDao {
     @Query("UPDATE todo_table SET groupName = :newGroupName WHERE id = :id")
     fun changeGroup(id: Int, newGroupName: String)
 
+    @Query("UPDATE todo_table SET groupName = :newGroupName WHERE groupName = :oldGroupName")
+    fun changeGroup2(oldGroupName: String, newGroupName: String)
+
     @Update
     fun updateTodo(todo: Todo)
 

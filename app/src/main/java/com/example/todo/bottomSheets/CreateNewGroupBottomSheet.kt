@@ -80,7 +80,9 @@ class CreateNewGroupBottomSheet(
 
     private fun setOnTextChange() {
         binding.edtNewGroupName.doAfterTextChanged {
-            binding.btnOK.isEnabled = edtNewGroupName.text.toString().trim().isNotEmpty()
+            binding.btnOK.isEnabled = edtNewGroupName.text.toString().trim().let {
+                it.isNotEmpty() && it.length <= 100
+            }
         }
     }
 }

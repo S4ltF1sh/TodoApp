@@ -37,11 +37,19 @@
     <string name="remove_from_app">Remove from app</string>
     <string name="restore_todo">restore todo</string>
     <string name="share_todo_in_text_format">Chia sẻ việc cần làm dưới dạng văn bản</string>
-    <string name="share_todo_in_image_format">Chia sẻ việc cần làm dưới dạng ảnh</string>
+    <string name="share_todo_to_main_screen">Thêm vào màn hình chính</string>
     <string name="share_todo">Chia sẻ việc cần làm</string>
     <string name="save_to_device">Lưu vào thiết bị</string>
     <string name="select_all_item">select all item</string>
-    <string name="action_check_done">Hoàn thành</string>
+    <string name="action_check_done">Đánh dấu hoàn thành</string>
     <string name="action_delete2">Xoá vĩnh viễn</string>
     <string name="action_restore">Khôi phục</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="todo_null">///////////////////////////////////</string>
+    <string name="todo">Việc cần làm</string>
+    <string name="shrug_face">¯\\_(ツ)_/¯</string>
+    <string name="add_todo">Thêm việc cần làm</string>
 </resources>

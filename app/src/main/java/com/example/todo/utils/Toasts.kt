@@ -4,6 +4,11 @@ import android.content.Context
 import android.widget.Toast
 
 object Toasts {
+    fun showNoAppSupportThis(context: Context?) =
+        Toast.makeText(context, "Không có ứng dụng nào hỗ trợ!", Toast.LENGTH_SHORT)
+            .show()
+
+
     fun showUnCodedFunctionToast(context: Context?) =
         Toast.makeText(
             context,

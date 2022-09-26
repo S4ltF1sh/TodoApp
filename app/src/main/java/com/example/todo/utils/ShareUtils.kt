@@ -1,34 +1,33 @@
 package com.example.todo.utils
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.net.Uri
+import android.provider.CalendarContract
 import android.view.View
+import com.google.android.gms.actions.NoteIntents
 import java.io.ByteArrayOutputStream
 
 
-object ShareUtils : BitmapUtils() {
-    fun getTodoByteArray(view: View): ByteArray {
-        val bitmap = viewToBitmap(view)
-        return bitmapToByteArray(bitmap)
+class ShareUtils(
+) : IntendGenerator() {
+
+}
+
+open class IntendGenerator() : SendTextIntentGenerator{
+    override fun genNewSendTextIntent(title: String, note: String): Intent {
+        return Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_SUBJECT, title)
+            putExtra(Intent.EXTRA_TEXT, note)
+        }
     }
 }
 
-open class BitmapUtils {
-    fun viewToBitmap(view: View): Bitmap {
-        val bitmap = Bitmap.createBitmap(
-            view.width,
-            view.measuredHeight,
-            Bitmap.Config.ARGB_8888
-        )
-        val canvas = Canvas(bitmap)
-        view.draw(canvas)
-
-        return bitmap
-    }
-
-    fun bitmapToByteArray(bitmap: Bitmap?): ByteArray {
-        val stream = ByteArrayOutputStream()
-        bitmap?.compress(Bitmap.CompressFormat.PNG, 100, stream)
-        return stream.toByteArray()
-    }
+interface SendTextIntentGenerator {
+    fun genNewSendTextIntent(title: String, note: String): Intent
 }
+
+

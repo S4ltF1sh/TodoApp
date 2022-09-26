@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
+import com.example.todo.MainActivity
 import com.example.todo.R
 import com.example.todo.adapters.forRV.TodoRVAdapter
 import com.example.todo.data.MyDatabase
@@ -25,11 +27,17 @@ class GarbageFragment(private val garbageBotNavListener: GarbageBotNavListener) 
     private lateinit var binding: FragmentGarbageBinding
     private lateinit var todoRepository: TodoRepository
     private lateinit var groupRepository: GroupRepository
+    private lateinit var adapter: TodoRVAdapter
 
     private val homeShareViewModel: HomeShareViewModel by lazy {
         ViewModelProvider(
             requireParentFragment(),
-            HomeShareViewModel.HomeShareViewModelFactory(todoRepository, groupRepository)
+            HomeShareViewModel.HomeShareViewModelFactory(
+                todoRepository,
+                groupRepository,
+                addRemind,
+                removeRemind
+            )
         )[HomeShareViewModel::class.java]
     }
 
@@ -54,26 +62,37 @@ class GarbageFragment(private val garbageBotNavListener: GarbageBotNavListener) 
     }
 
     private fun setContent() {
+        adapter = TodoRVAdapter(viewTodo, restoreTodo, getEditMode, selectItem, unSelectItem)
+        binding.rvDeletedTodoList.adapter = adapter
         homeShareViewModel.updateGarbageFragmentData()
         homeShareViewModel.getGarbageFragmentLiveData().observe(viewLifecycleOwner) {
-            binding.rvDeletedTodoList.adapter =
-                TodoRVAdapter(it, viewTodo, restoreTodo, getEditMode, selectItem, unSelectItem)
+            adapter.setData(it)
+            if (it.isNotEmpty())
+                binding.tvShrugFace.visibility = View.GONE
+            else
+                binding.tvShrugFace.visibility = View.VISIBLE
         }
     }
 
-    private val viewTodo = { todo: Todo ->
+    private val viewTodo = { todo: Todo, extras: FragmentNavigator.Extras ->
         val argument = Bundle()
-        argument.putSerializable(Const.TODO_NEED_TO_VIEW, todo)
+        argument.putInt(Const.ID_TODO_NEED_TO_VIEW, todo.id)
         argument.putSerializable(Const.VIEW_TODO_STATUS, ViewTodoStatus.VIEW_MODE)
 
-        findNavController().navigate(R.id.action_homeFragment_to_viewTodoFragment, argument)
+        findNavController().navigate(
+            R.id.action_homeFragment_to_viewTodoFragment,
+            argument,
+            null,
+            extras
+        )
     }
 
-    private val restoreTodo = { todo: Todo ->
+    private val restoreTodo = { todo: Todo, position: Int ->
         homeShareViewModel.addNewGroup(todo.groupName)
         homeShareViewModel.changeTodoStatus(todo.id, TodoStatus.ON_GOING)
         homeShareViewModel.updateOnGoingFragmentData()
-        homeShareViewModel.updateGarbageFragmentData()
+        addRemind(todo)
+        adapter.removeItem(position)
     }
 
     private val selectItem = { item: Item ->
@@ -94,6 +113,11 @@ class GarbageFragment(private val garbageBotNavListener: GarbageBotNavListener) 
     }
 
     private val getEditMode = { homeShareViewModel.getEditMode() }
+
+    private val addRemind = { todo: Todo ->
+        (activity as MainActivity).addRemind(todo)
+    }
+    private val removeRemind = { _: Todo -> }
 
     interface GarbageBotNavListener {
         fun enterEditMode()

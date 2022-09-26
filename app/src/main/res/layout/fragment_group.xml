@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:transitionName="groupDetail"
     tools:context=".fragments.group.GroupFragment">
 
 
@@ -14,25 +14,51 @@
         android:layout_height="@dimen/default_size"
         android:elevation="0dp"
         android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/view_group"
         app:navigationIcon="@drawable/ic_back" />
 
     <TextView
         android:id="@+id/tvTitle"
-        style="@style/TextAppearance.Material3.HeadlineLarge"
+        style="@style/TextAppearance.Material3.HeadlineMedium"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/default_size"
+        android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/large_margin"
-        android:text="@string/default_title" />
+        android:text="@string/default_title"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTodoGroup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layoutAnimation="@anim/recyclerview_anim_layout"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_anchorGravity="bottom"
+        app:layout_constraintBottom_toTopOf="@+id/botNav"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         tools:listitem="@layout/item_todo" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/tvShrugFace"
+        style="@style/TextAppearance.Material3.HeadlineSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shrug_face"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rvTodoGroup"
+        app:layout_constraintEnd_toEndOf="@+id/rvTodoGroup"
+        app:layout_constraintStart_toStartOf="@+id/rvTodoGroup"
+        app:layout_constraintTop_toTopOf="@+id/rvTodoGroup" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/botNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_main"
+        android:elevation="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/home_bottom_toolbar_only_todo_mode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

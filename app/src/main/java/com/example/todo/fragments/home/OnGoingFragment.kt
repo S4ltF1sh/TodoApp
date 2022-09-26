@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import com.example.todo.MainActivity
 import com.example.todo.R
 import com.example.todo.adapters.forRV.OnGoingFragmentRVAdapter
 import com.example.todo.common.Const
-import com.example.todo.common.Const.GROUP_NEED_TO_VIEW
+import com.example.todo.common.Const.GROUP_TITLE_NEED_TO_VIEW
 import com.example.todo.common.ItemsEditMode
 import com.example.todo.common.TodoStatus
 import com.example.todo.common.ViewTodoStatus
@@ -33,7 +35,12 @@ class OnGoingFragment(
     private val homeShareViewModel: HomeShareViewModel by lazy {
         ViewModelProvider(
             requireParentFragment(),
-            HomeShareViewModel.HomeShareViewModelFactory(todoRepository, groupRepository)
+            HomeShareViewModel.HomeShareViewModelFactory(
+                todoRepository,
+                groupRepository,
+                addRemind,
+                removeRemind
+            )
         )[HomeShareViewModel::class.java]
     }
 
@@ -51,19 +58,25 @@ class OnGoingFragment(
         todoRepository = TodoRepository(todoDao)
         groupRepository = GroupRepository(groupDao)
 
+
         homeShareViewModel.updateOnGoingFragmentData()
+        val adapter = OnGoingFragmentRVAdapter(
+            viewTodo,
+            viewGroup,
+            getEditMode,
+            checkDoneTodo,
+            addTodoToGroup,
+            selectItem,
+            unSelectItem,
+        )
+
+        binding.rvItemList.adapter = adapter
         homeShareViewModel.getOnGoingFragmentLiveData().observe(viewLifecycleOwner) {
-            binding.rvItemList.adapter =
-                OnGoingFragmentRVAdapter(
-                    it,
-                    viewTodo,
-                    viewGroup,
-                    getEditMode,
-                    checkDoneTodo,
-                    addTodoToGroup,
-                    selectItem,
-                    unSelectItem,
-                )
+            adapter.setData(it)
+            if (it.isNotEmpty())
+                binding.tvShrugFace.visibility = View.GONE
+            else
+                binding.tvShrugFace.visibility = View.VISIBLE
         }
 
         setOnClick()
@@ -73,33 +86,51 @@ class OnGoingFragment(
 
     private fun setOnClick() {
         binding.fabAdd.setOnClickListener {
-            addNewTodo(R.id.action_homeFragment_to_viewTodoFragment)
+            addNewTodo()
         }
     }
 
-    private fun addNewTodo(action: Int) {
+    private fun addNewTodo() {
         val argument = Bundle()
         argument.putSerializable(Const.VIEW_TODO_STATUS, ViewTodoStatus.ADD_MODE)
+        val extras = FragmentNavigatorExtras(
+            binding.fabAdd to "detailTodo"
+        )
 
-        binding.fabAdd.findNavController().navigate(action, argument)
+        findNavController().navigate(
+            R.id.action_homeFragment_to_viewTodoFragment,
+            argument,
+            null,
+            extras
+        )
     }
 
-    private val viewTodo = { todo: Todo ->
+    private val viewTodo = { todo: Todo, extras: FragmentNavigator.Extras ->
         if (homeShareViewModel.getEditMode() == ItemsEditMode.NONE) {
             val argument = Bundle()
-            argument.putSerializable(Const.TODO_NEED_TO_VIEW, todo)
+            argument.putInt(Const.ID_TODO_NEED_TO_VIEW, todo.id)
             argument.putSerializable(Const.VIEW_TODO_STATUS, ViewTodoStatus.VIEW_MODE)
 
-            findNavController().navigate(R.id.action_homeFragment_to_viewTodoFragment, argument)
+            findNavController().navigate(
+                R.id.action_homeFragment_to_viewTodoFragment,
+                argument,
+                null,
+                extras
+            )
         }
     }
 
-    private val viewGroup = { groupWithTodos: GroupWithTodos ->
+    private val viewGroup = { title: String, extras: FragmentNavigator.Extras ->
         if (homeShareViewModel.getEditMode() == ItemsEditMode.NONE) {
             val argument = Bundle()
-            argument.putSerializable(GROUP_NEED_TO_VIEW, groupWithTodos)
+            argument.putString(GROUP_TITLE_NEED_TO_VIEW, title)
 
-            findNavController().navigate(R.id.action_homeFragment_to_viewGroupFragment, argument)
+            findNavController().navigate(
+                R.id.action_homeFragment_to_viewGroupFragment,
+                argument,
+                null,
+                extras
+            )
         }
     }
 
@@ -109,6 +140,7 @@ class OnGoingFragment(
         homeShareViewModel.changeTodoStatus(todo.id, TodoStatus.DONE)
         homeShareViewModel.updateOnGoingFragmentData()
         homeShareViewModel.updateGarbageFragmentData()
+        removeRemind(todo)
     }
 
     private val addTodoToGroup = { id: Int, groupName: String ->
@@ -147,6 +179,13 @@ class OnGoingFragment(
             homeShareViewModel.setEditMode(ItemsEditMode.ONLY_ONE_GROUP)
             onGoingBotNavListener.notifyEditModeChange()
         }
+    }
+
+    private val addRemind = { todo: Todo ->
+        (activity as MainActivity).addRemind(todo)
+    }
+    private val removeRemind = { todo: Todo ->
+        (activity as MainActivity).removeRemind(todo)
     }
 
     interface OnGoingBotNavListener {

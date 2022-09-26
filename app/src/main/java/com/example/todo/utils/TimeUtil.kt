@@ -6,7 +6,7 @@ import java.util.*
 
 object TimeUtil {
     fun format(date: Date?): String {
-        val timeFormatter = SimpleDateFormat("EEEE dd/MM/yyyy | HH:mm", Locale.ROOT)
+        val timeFormatter = SimpleDateFormat("EEEE dd/MM/yyyy | HH:mm", Locale.getDefault())
         return date?.let { timeFormatter.format(it).toString() } ?: "Chưa hẹn giờ"
     }
 

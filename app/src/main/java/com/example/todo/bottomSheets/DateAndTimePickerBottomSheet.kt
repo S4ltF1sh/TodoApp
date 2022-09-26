@@ -63,7 +63,6 @@ class DateAndTimePickerBottomSheet(private val setNewTime: (Date?) -> Unit) :
 
     private val onDateChangedListener = { _: DatePicker, _: Int, _: Int, _: Int ->
         notifyDetailTimeChange()
-
     }
 
     private val onTimeChangeListener = { _: TimePicker, _: Int, _: Int ->

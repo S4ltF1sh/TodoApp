@@ -15,7 +15,9 @@ import java.lang.IllegalArgumentException
 
 class HomeShareViewModel(
     private val todoRepository: TodoRepository,
-    private val groupRepository: GroupRepository
+    private val groupRepository: GroupRepository,
+    private val addRemind: (Todo) -> Unit,
+    private val removeRemind: (Todo) -> Unit
 ) : ViewModel() {
     private val onGoingFragmentLiveData: MutableLiveData<List<Item>> = MutableLiveData<List<Item>>()
     private val garbageFragmentLiveData: MutableLiveData<List<Todo>> = MutableLiveData<List<Todo>>()
@@ -26,13 +28,20 @@ class HomeShareViewModel(
 
     class HomeShareViewModelFactory(
         private val todoRepository: TodoRepository,
-        private val groupRepository: GroupRepository
+        private val groupRepository: GroupRepository,
+        private val addRemind: (Todo) -> Unit,
+        private val removeRemind: (Todo) -> Unit
     ) :
         ViewModelProvider.Factory {
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(HomeShareViewModel::class.java)) {
-                return HomeShareViewModel(todoRepository, groupRepository) as T
+                return HomeShareViewModel(
+                    todoRepository,
+                    groupRepository,
+                    addRemind,
+                    removeRemind
+                ) as T
             }
 
             throw IllegalArgumentException("Unable construct viewModel")
@@ -67,8 +76,15 @@ class HomeShareViewModel(
     fun remove1AllSelectedItems() {
         for (item in selectedItems) {
             when (item) {
-                is Todo -> changeTodoStatus(item.id, TodoStatus.DELETED)
-                is GroupWithTodos -> deleteGroupWithTodos(item)
+                is Todo -> {
+                    changeTodoStatus(item.id, TodoStatus.DELETED)
+                    removeRemind(item)
+                }
+                is GroupWithTodos -> {
+                    for (todo: Todo in item.todos)
+                        removeRemind(todo)
+                    deleteGroupWithTodos(item)
+                }
             }
         }
         unSelectAllItem()
@@ -79,8 +95,10 @@ class HomeShareViewModel(
 
     fun checkDoneAllSelectedTodos() {
         for (item in selectedItems)
-            if (item is Todo)
+            if (item is Todo) {
                 changeTodoStatus(item.id, TodoStatus.DONE)
+                removeRemind(item)
+            }
 
         unSelectAllItem()
         setEditMode(ItemsEditMode.NONE)
@@ -101,11 +119,16 @@ class HomeShareViewModel(
     }
 
     fun addAllSelectedTodosToGroup(groupName: String) {
-        for (item in items) {
-            if (item is Todo)
-                addTodoToGroup(item.id, groupName)
+        if (groupName != "") {
+            for (item in selectedItems) {
+                if (item is Todo)
+                    addTodoToGroup(item.id, groupName)
+            }
+
+            unSelectAllItem()
+            setEditMode(ItemsEditMode.NONE)
+            updateOnGoingFragmentData()
         }
-        updateOnGoingFragmentData()
     }
 
     //GarbageFragment:
@@ -129,8 +152,11 @@ class HomeShareViewModel(
 
     fun restoreAllSelectedTodos() {
         for (item in selectedItems)
-            if (item is Todo)
+            if (item is Todo) {
+                addNewGroup(item.groupName)
                 changeTodoStatus(item.id, TodoStatus.ON_GOING)
+                addRemind(item)
+            }
 
         unSelectAllItem()
         setEditMode(ItemsEditMode.NONE)
@@ -138,14 +164,22 @@ class HomeShareViewModel(
         updateGarbageFragmentData()
     }
 
+    fun changeGroupName(newTitle: String) {
+        if (selectedItems.size == 1) {
+            val oldTitle = (selectedItems[0] as GroupWithTodos).group?.title ?: "Nhóm mặc định"
+            groupRepository.updateGroupByTitle(oldTitle, newTitle, TimeUtil.currentTime())
+            todoRepository.changeGroup2(oldTitle, newTitle)
+            unSelectAllItem()
+            setEditMode(ItemsEditMode.NONE)
+            updateOnGoingFragmentData()
+        }
+    }
+
     private fun getTodosForOnGoingFragment() =
         todoRepository.getTodosForOnGoingFragment()
 
     private fun getTodoByTodoStatus(todoStatus: TodoStatus) =
         todoRepository.getByTodoStatus(todoStatus)
-
-    fun searchTodo(keyWord: String) =
-        todoRepository.getByKeyWord(keyWord)
 
     fun changeTodoStatus(id: Int, newTodoStatus: TodoStatus) {
         todoRepository.changeTodoStatus(id, newTodoStatus)
@@ -163,4 +197,6 @@ class HomeShareViewModel(
         todoRepository.changeGroup(id, groupName)
         updateOnGoingFragmentData()
     }
+
+    fun getAllGroup(): List<Group> = groupRepository.getAll()
 }

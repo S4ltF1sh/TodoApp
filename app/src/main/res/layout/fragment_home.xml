@@ -25,31 +25,35 @@
     </com.google.android.material.appbar.MaterialToolbar>
 
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
+    <EditText
+        android:id="@+id/edtSearchBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_size"
         android:layout_marginHorizontal="@dimen/extreme_large_margin2"
         android:layout_marginVertical="@dimen/small_margin"
         android:background="@drawable/search_view"
-        app:iconifiedByDefault="false"
+        android:drawableStart="@drawable/ic_search"
+        android:imeOptions="flagNoExtractUi|actionSearch"
+        android:inputType="textNoSuggestions"
+        android:paddingHorizontal="@dimen/large_margin"
         app:layout_constraintTop_toBottomOf="@+id/toolBar"
-        app:queryBackground="@null" />
+        tools:ignore="Autofill,LabelFor" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/botNav"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/edtSearchBar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/botNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/background_main"
+        android:elevation="0dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/home_bottom_toolbar_only_todo_mode"
-        android:elevation="0dp"/>
+        app:menu="@menu/home_bottom_toolbar_only_todo_mode" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

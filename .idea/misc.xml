@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2925" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/circle_checkbox.xml" value="0.3555" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/circle_checkbox_checked.xml" value="0.206" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/circle_checkbox_unchecked.xml" value="0.206" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/folder_open.xml" value="0.296" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_add.xml" value="0.2925" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_alarm.xml" value="0.374" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_alarm_12.xml" value="0.374" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/drawable/ic_alarm_16.xml" value="0.3075" />
@@ -50,10 +52,13 @@
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_done.xml" value="0.28804347826086957" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_garbage.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_gon_going.xml" value="0.3692708333333333" />
-        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_group.xml" value="0.1" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_home.xml" value="0.4" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_home2.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_on_going.xml" value="0.264" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_search.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_share_todo_in_image_format.xml" value="0.264" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_todo.xml" value="0.264" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_view_group.xml" value="0.264" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/fragment_view_todo.xml" value="0.4" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/layout/item_add_new_group.xml" value="0.3692708333333333" />
@@ -87,6 +92,7 @@
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/view_todo_menu.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/view_todo_menu_edit_mode.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/view_todo_menu_view_mode.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/sanka/AndroidStudioProjects/TODO/app/src/main/res/menu/view_todo_view_mode.xml" value="0.3692708333333333" />
       </map>
     </option>
   </component>
