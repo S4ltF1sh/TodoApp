@@ -1,16 +1,21 @@
 # Database:
 1. Todo:
+
 ![image](https://user-images.githubusercontent.com/84552830/192390180-3abf0e3a-c38e-4c70-9749-677daaf5303a.png)
 
 > Date được convert thành Long qua file Converter để Room lưu trữ được.
+
 ![image](https://user-images.githubusercontent.com/84552830/192390411-c89efdf8-8dfa-462b-87eb-5e6ddc9f12ad.png)
 
 3. Group:
+
 ![image](https://user-images.githubusercontent.com/84552830/192390260-05d576bb-6003-433c-9d93-8338b6544b60.png)
 
 4. GroupWithTodos:
+
 - Sử dụng Relation 1:N để duyệt 2 bảng, trả về 1 Group với N Todo.
 - Sử dụng @DatabaseView để thêm điều kiện vào GroupWithTodos.
+
 ![image](https://user-images.githubusercontent.com/84552830/192390520-8a730384-9618-422a-8f52-67dbdb526575.png)
 
 # ViewModel:
@@ -32,17 +37,23 @@
 # Chi tiết chức năng:
 ## Tạo mới Todo:
 1. Nhấn vào FAB ở góc phải dưới màn hình để tạo mới Todo.
-2. Nhấn vào ChipTime để chọn thời gian nhắc nhở.
+
+3. Nhấn vào ChipTime để chọn thời gian nhắc nhở.
+
 ![image](https://user-images.githubusercontent.com/84552830/192391308-6199414a-678c-41ce-a5e9-a94715e662fb.png)
 
 3. Nhấn ChipGroup để chọn Group cho Todo:
+
 ![image](https://user-images.githubusercontent.com/84552830/192391461-ff8cd63b-9a06-4305-b9cd-559226411224.png)
 
 - Chọn các Group tương ứng để thay đổi Group cho Todo.
+
 - Chọn Tạo nhóm mới để mở ra BottomSheet Tạo nhóm mới:
+
 ![image](https://user-images.githubusercontent.com/84552830/192391756-5199e0f4-3ebd-4ea0-93ff-57afadf2f888.png)
 
 > Nút OK sẽ bị disable khi tên nhóm mới là 0 hoặc có độ dài > 100 ký tự.
+
 ![image](https://user-images.githubusercontent.com/84552830/192392069-080101a0-2d30-451a-b0f2-eebc2dde757b.png)
 
 4. Khi nhấn Back trên thanh điều hướng sẽ thêm Todo mới vào Database.
@@ -51,7 +62,9 @@
 ## Xoá và khôi phục Todo:
 - Khi nhấn vào checkbox để hoàn thành hoặc xoá Todo đều sẽ đưa Todo vào thùng rác.
 > Trên thực tế thì TodoStatus sẽ được chuyển đổi từ ON_GOING => DELETED or DONE (thùng rác sẽ load các Todo có TodoStatus là DELETED or DONE)
+
 - Trong thùng rác có thể khôi phục hoặc xoá vĩnh viễn Todo.
+
 - Khi khôi phục:
 > Chuyển TodoStatus thành DELETED.
 > Tạo nhắc nhở mới nếu có AlarmTime != null.
@@ -61,15 +74,19 @@
 - Sử dụng @Query và LIKE kết + doAfterTextChange + handle().delay để search:
 > Search bar thực tế là Edittext
 > handle().delay để tránh doAfterTextChange check liên tục.
+
 ![image](https://user-images.githubusercontent.com/84552830/192393499-a602a365-2935-468f-aa56-4a506f3922b3.png)
+
 ![image](https://user-images.githubusercontent.com/84552830/192393835-2247c2cd-42dd-4c0d-a702-372275094543.png)
 
 ## Chia sẻ Todo:
 - Sử dụng ImplictIntent với ACTION_SEND để gửi Title và Note đi.
+
 ![image](https://user-images.githubusercontent.com/84552830/192394181-6a4a0546-4fb9-46e7-b5c9-f2e26a5cc28b.png)
 
 ## Một số thao tác với Group:
 - Group có thể đổi tên.
+
 - Xoá Group: 
 > Xoá Group ra khỏi Database.
 > Chuyển toàn bộ TodoStatus của các Todo trong Group đó sang DELETED.
@@ -83,11 +100,15 @@
 
 ## Thêm và nhận nhắc nhở:
 - Chỉ cần chọn thời gian nhắc nhở thì khi nhấn Back trên thanh điều hướng, ngay lập tức sẽ sử dụng [AlarmManager]() để thêm nhắc nhở.
+
 - Thông báo đăng ký Channel với Important.HIGHT để hiện Headup trên màn hình.
+
 ![image](https://user-images.githubusercontent.com/84552830/192395302-fa3a0ecd-0b62-44b9-a30b-51a83849d33b.png)
 
 - Thông báo được custom khi mở rộng thông qua setCustomBigContentView().
+
 - Khi nhấn vào thông báo sẽ nhảy thẳng vào TodoFragment để xem chi tiết Todo bằng DeepLink (sử dụng NavDeepLinkBuilder).
+
 ![image](https://user-images.githubusercontent.com/84552830/192395552-4c7b2b37-7351-4c62-8df6-b8c9416e37a8.png)
 
 - Nếu nhấn vào "Đánh dấu là hoàn thành" sẽ gửi tín hiệu tới ActionFromNotification (BroadcastReceiver):
