@@ -79,12 +79,17 @@ class GarbageFragment(private val garbageBotNavListener: GarbageBotNavListener) 
         argument.putInt(Const.ID_TODO_NEED_TO_VIEW, todo.id)
         argument.putSerializable(Const.VIEW_TODO_STATUS, ViewTodoStatus.VIEW_MODE)
 
-        findNavController().navigate(
-            R.id.action_homeFragment_to_viewTodoFragment,
-            argument,
-            null,
-            extras
-        )
+        try {
+            findNavController().navigate(
+                R.id.action_homeFragment_to_viewTodoFragment,
+                argument,
+                null,
+                extras
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
     }
 
     private val restoreTodo = { todo: Todo, position: Int ->
@@ -92,6 +97,7 @@ class GarbageFragment(private val garbageBotNavListener: GarbageBotNavListener) 
         homeShareViewModel.changeTodoStatus(todo.id, TodoStatus.ON_GOING)
         homeShareViewModel.updateOnGoingFragmentData()
         addRemind(todo)
+        updateWidgets()
         adapter.removeItem(position)
     }
 
@@ -118,6 +124,10 @@ class GarbageFragment(private val garbageBotNavListener: GarbageBotNavListener) 
         (activity as MainActivity).addRemind(todo)
     }
     private val removeRemind = { _: Todo -> }
+
+    private fun updateWidgets() {
+        (activity as MainActivity).updateWidgets()
+    }
 
     interface GarbageBotNavListener {
         fun enterEditMode()

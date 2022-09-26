@@ -16,9 +16,11 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.todo.MainActivity
 import com.example.todo.R
+import com.example.todo.bottomSheets.AlertBottomSheet
 import com.example.todo.bottomSheets.CreateNewGroupBottomSheet
 import com.example.todo.bottomSheets.DateAndTimePickerBottomSheet
 import com.example.todo.bottomSheets.GroupPickerBottomSheet
+import com.example.todo.common.Const
 import com.example.todo.data.MyDatabase
 import com.example.todo.data.models.todo.Todo
 import com.example.todo.databinding.FragmentTodoBinding
@@ -218,8 +220,24 @@ class TodoFragment : Fragment() {
             R.id.itemSave -> saveButtonClicked()
             R.id.itemShare -> shareButtonClicked()
             R.id.itemMoveTo -> pickGroup()
-            R.id.itemDelete -> delete1ButtonClicked()
-            R.id.itemDelete2 -> delete2ButtonClicked()
+            R.id.itemDelete -> {
+                delete1ButtonClicked()
+                findNavController().popBackStack()
+            }
+            R.id.itemDelete2 -> {
+                val buttonClicked = { choice: Boolean ->
+                    if (choice) {
+                        delete2ButtonClicked()
+                        findNavController().popBackStack()
+                    }
+                }
+
+                AlertBottomSheet("Xoá vĩnh viễn việc cần làm?", buttonClicked).show(
+                    childFragmentManager,
+                    Const.ALERT_BOTTOM_SHEET
+                )
+
+            }
             R.id.itemRestore -> restoreButtonClicked()
         }
 
@@ -249,11 +267,8 @@ class TodoFragment : Fragment() {
                     addNewTodo()
             }
             else -> {
-                if (isEmptyTodo())
-                    delete2ButtonClicked()
-                else {
+                if (!isEmptyTodo())
                     updateCurrentTodo()
-                }
             }
         }
 
@@ -274,13 +289,11 @@ class TodoFragment : Fragment() {
             updateCurrentTodo()
         }
         Toasts.deletedTodoToast(context)
-        findNavController().popBackStack()
     }
 
     private fun delete2ButtonClicked() {
         todoViewModel.getTodoLiveData().value?.let { (activity as MainActivity).removeRemind(it) }
         todoViewModel.delete2Todo()
-        findNavController().popBackStack()
     }
 
     private fun restoreButtonClicked() {
@@ -384,7 +397,7 @@ class TodoFragment : Fragment() {
         }
     }
 
-    private fun updateWidgets(){
+    private fun updateWidgets() {
         (activity as MainActivity).updateWidgets()
     }
 

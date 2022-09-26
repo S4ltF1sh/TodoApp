@@ -96,13 +96,17 @@ class OnGoingFragment(
         val extras = FragmentNavigatorExtras(
             binding.fabAdd to "detailTodo"
         )
+        try {
+            findNavController().navigate(
+                R.id.action_homeFragment_to_viewTodoFragment,
+                argument,
+                null,
+                extras
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
 
-        findNavController().navigate(
-            R.id.action_homeFragment_to_viewTodoFragment,
-            argument,
-            null,
-            extras
-        )
     }
 
     private val viewTodo = { todo: Todo, extras: FragmentNavigator.Extras ->
@@ -111,12 +115,17 @@ class OnGoingFragment(
             argument.putInt(Const.ID_TODO_NEED_TO_VIEW, todo.id)
             argument.putSerializable(Const.VIEW_TODO_STATUS, ViewTodoStatus.VIEW_MODE)
 
-            findNavController().navigate(
-                R.id.action_homeFragment_to_viewTodoFragment,
-                argument,
-                null,
-                extras
-            )
+            try {
+                findNavController().navigate(
+                    R.id.action_homeFragment_to_viewTodoFragment,
+                    argument,
+                    null,
+                    extras
+                )
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+
         }
     }
 
@@ -141,6 +150,7 @@ class OnGoingFragment(
         homeShareViewModel.updateOnGoingFragmentData()
         homeShareViewModel.updateGarbageFragmentData()
         removeRemind(todo)
+        updateWidgets()
     }
 
     private val addTodoToGroup = { id: Int, groupName: String ->
@@ -186,6 +196,10 @@ class OnGoingFragment(
     }
     private val removeRemind = { todo: Todo ->
         (activity as MainActivity).removeRemind(todo)
+    }
+
+    private fun updateWidgets() {
+        (activity as MainActivity).updateWidgets()
     }
 
     interface OnGoingBotNavListener {

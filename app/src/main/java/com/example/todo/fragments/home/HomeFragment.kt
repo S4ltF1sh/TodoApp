@@ -111,6 +111,7 @@ class HomeFragment : Fragment(), OnGoingFragment.OnGoingBotNavListener,
                             if (choice) {
                                 homeShareViewModel.remove1AllSelectedItems()
                                 enterNavigationMode()
+                                updateWidgets()
                             }
                         }
 
@@ -146,6 +147,7 @@ class HomeFragment : Fragment(), OnGoingFragment.OnGoingBotNavListener,
                     R.id.itemCheckDoneAtBottom -> {
                         homeShareViewModel.checkDoneAllSelectedTodos()
                         enterNavigationMode()
+                        updateWidgets()
                     }
                     R.id.itemDelete2AtBottom -> {
                         val buttonClicked = { choice: Boolean ->
@@ -163,6 +165,7 @@ class HomeFragment : Fragment(), OnGoingFragment.OnGoingBotNavListener,
                     R.id.itemRestoreAtBottom -> {
                         homeShareViewModel.restoreAllSelectedTodos()
                         enterNavigationMode()
+                        updateWidgets()
                     }
                     R.id.itemRenameAtBottom -> {
                         val changeGroupName = { newGroupName: String ->
@@ -194,6 +197,10 @@ class HomeFragment : Fragment(), OnGoingFragment.OnGoingBotNavListener,
 
     private val removeRemind = { todo: Todo ->
         (activity as MainActivity).removeRemind(todo)
+    }
+
+    private fun updateWidgets() {
+        (activity as MainActivity).updateWidgets()
     }
 
 

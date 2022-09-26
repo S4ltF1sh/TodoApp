@@ -72,7 +72,6 @@ class ChangeGroupNameBottomSheet(
         val aGroup = MyDatabase.getInstance(requireContext()).groupDao.getByTitle(newGroupTitle)
         if (aGroup == null) {
             changeGroupTitle(newGroupTitle)
-            Toasts.addedNewGroupToast(context)
             this.dismiss()
         } else {
             Toasts.showNewGroupTitleIsAlreadyExistedToast(context)
