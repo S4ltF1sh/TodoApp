@@ -44,7 +44,7 @@
 
 3. Nhấn ChipGroup để chọn Group cho Todo:
 
-![image](https://user-images.githubusercontent.com/84552830/192391461-ff8cd63b-9a06-4305-b9cd-559226411224.png)
+![image](https://user-images.githubusercontent.com/84552830/192396541-a2ddf096-ca2b-4882-9510-430192f93536.png)
 
 - Chọn các Group tương ứng để thay đổi Group cho Todo.
 
@@ -54,7 +54,7 @@
 
 > Nút OK sẽ bị disable khi tên nhóm mới là 0 hoặc có độ dài > 100 ký tự.
 
-![image](https://user-images.githubusercontent.com/84552830/192392069-080101a0-2d30-451a-b0f2-eebc2dde757b.png)
+![image](https://user-images.githubusercontent.com/84552830/192396622-35673a8b-e172-4eb2-9bd3-5020eddfad79.png)
 
 4. Khi nhấn Back trên thanh điều hướng sẽ thêm Todo mới vào Database.
 
@@ -114,6 +114,7 @@
 - Nếu nhấn vào "Đánh dấu là hoàn thành" sẽ gửi tín hiệu tới ActionFromNotification (BroadcastReceiver):
 > Từ đây sẽ chuyển TodoStatus của Todo (xác định bằng id) thành DELETED.
 > Gửi tín hiệu tới TodoWidget (AppWidgetProvider) để update Widget:
+
 ![image](https://user-images.githubusercontent.com/84552830/192396077-696a53a9-a45d-411e-abc6-16661279b974.png)
 
 ## Widget cơ bản:
