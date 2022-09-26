@@ -1,7 +1,10 @@
 Chức năng:
 - Thêm mới Todo, chia Todo thành các nhóm (Group):
 
-https://user-images.githubusercontent.com/84552830/192374392-c915064f-657a-4f55-98aa-ac9e83a0807a.mp4
+| Chức năng | Mô tả |
+| --- | --- |
+| Tạo mới Todo | ![Tạo mới Todo](https://user-images.githubusercontent.com/84552830/192376193-4d5d7746-8af9-4b16-8d43-f1640044e2b2.gif) |
+| git diff | Show file differences that haven't been staged |
 
 
 
