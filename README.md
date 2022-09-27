@@ -147,8 +147,8 @@
 
 > Lưu ý là khi tạo ViewModel ở 2 Fragment kể trên cần chú ý phần ViewModelStoreOwner sẽ là requireParentFragment() và ở HomeFragment là _this_
 
-|![image](https://user-images.githubusercontent.com/84552830/192532705-2694e99e-c2d0-4cab-b94d-57ede734313d.png)
-|![image](https://user-images.githubusercontent.com/84552830/192532769-4d1685a5-bc0d-418d-9931-cf20b746598c.png)|
+![image](https://user-images.githubusercontent.com/84552830/192532705-2694e99e-c2d0-4cab-b94d-57ede734313d.png)
+![image](https://user-images.githubusercontent.com/84552830/192532769-4d1685a5-bc0d-418d-9931-cf20b746598c.png)
 
 > Làm vậy để từ HomeFragment hay 2 Fragment kia có thể update 2 Fragment còn lại khi thay đổi LiveData tương ứng (do có chung ViewModelStoreOwner là HomeFragment)
 
