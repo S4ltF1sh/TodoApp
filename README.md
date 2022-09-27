@@ -23,16 +23,16 @@
 
 | Chức năng | Mô tả |
 | --- | --- |
-| [Tạo mới Todo] | ![Tạo mới Todo](https://user-images.githubusercontent.com/84552830/192386174-1416b8f6-1cfe-4043-af0b-762f90ae2d4b.gif) |
-| [Sửa Todo] | ![Sửa Todo](https://user-images.githubusercontent.com/84552830/192385410-c6a29545-e301-456e-b5a9-3b096450b12a.gif) |
-| [Xoá và khôi phục Todo] | ![Xoá và khôi phục Todo](https://user-images.githubusercontent.com/84552830/192386217-e2682cd0-4b07-4e3c-88c5-9bd89cc01b75.gif) |
-| [Tìm kiếm Todo] | ![Tìm kiếm Todo](https://user-images.githubusercontent.com/84552830/192385446-daad8d95-3a7e-4290-b20e-0a7b6fe567a7.gif) |
-| [Chia sẻ Todo] | ![Chia sẻ Todo](https://user-images.githubusercontent.com/84552830/192385543-c282f12d-f6ef-4066-82bb-0655f0670699.gif) |
-| [Một số thao tác với Group] | ![Một số thao tác với Group (2)](https://user-images.githubusercontent.com/84552830/192385591-5403eb2b-e4c6-4648-9c5f-fa448b64a0c0.gif) |
-| [Multi Select] | ![Multi Select](https://user-images.githubusercontent.com/84552830/192385656-34b7a055-2ff9-4ee6-9461-f01536568848.gif) |
-| [Thêm và nhận nhắc nhở] | ![Thêm nhắc nhở](https://user-images.githubusercontent.com/84552830/192385839-8dd4fe63-8ced-4b17-8bab-9b0541f5c792.gif) |
+| [Tạo mới Todo](https://github.com/S4ltF1sh/TodoApp#t%E1%BA%A1o-m%E1%BB%9Bi-todo) | ![Tạo mới Todo](https://user-images.githubusercontent.com/84552830/192386174-1416b8f6-1cfe-4043-af0b-762f90ae2d4b.gif) |
+| [Sửa Todo](https://github.com/S4ltF1sh/TodoApp#s%E1%BB%ADa-todo) | ![Sửa Todo](https://user-images.githubusercontent.com/84552830/192385410-c6a29545-e301-456e-b5a9-3b096450b12a.gif) |
+| [Xoá và khôi phục Todo]() | ![Xoá và khôi phục Todo](https://user-images.githubusercontent.com/84552830/192386217-e2682cd0-4b07-4e3c-88c5-9bd89cc01b75.gif) |
+| [Tìm kiếm Todo](https://github.com/S4ltF1sh/TodoApp#t%C3%ACm-ki%E1%BA%BFm-todo) | ![Tìm kiếm Todo](https://user-images.githubusercontent.com/84552830/192385446-daad8d95-3a7e-4290-b20e-0a7b6fe567a7.gif) |
+| [Chia sẻ Todo](https://github.com/S4ltF1sh/TodoApp#chia-s%E1%BA%BB-todo) | ![Chia sẻ Todo](https://user-images.githubusercontent.com/84552830/192385543-c282f12d-f6ef-4066-82bb-0655f0670699.gif) |
+| [Một số thao tác với Group](https://github.com/S4ltF1sh/TodoApp#m%E1%BB%99t-s%E1%BB%91-thao-t%C3%A1c-v%E1%BB%9Bi-group) | ![Một số thao tác với Group (2)](https://user-images.githubusercontent.com/84552830/192385591-5403eb2b-e4c6-4648-9c5f-fa448b64a0c0.gif) |
+| [Multi Select](https://github.com/S4ltF1sh/TodoApp#multi-select) | ![Multi Select](https://user-images.githubusercontent.com/84552830/192385656-34b7a055-2ff9-4ee6-9461-f01536568848.gif) |
+| [Thêm và nhận nhắc nhở](https://github.com/S4ltF1sh/TodoApp#th%C3%AAm-v%C3%A0-nh%E1%BA%ADn-nh%E1%BA%AFc-nh%E1%BB%9F) | ![Thêm nhắc nhở](https://user-images.githubusercontent.com/84552830/192385839-8dd4fe63-8ced-4b17-8bab-9b0541f5c792.gif) |
 ||![Nhận nhắc nhở](https://user-images.githubusercontent.com/84552830/192385913-479db436-47ea-42fd-9b67-41d5281cdf73.gif) |
-| [Widget cơ bản] | ![Widget Cơ bản](https://user-images.githubusercontent.com/84552830/192385968-15dec4bd-3ac2-48a7-9cb5-52823c4ca911.gif) |
+| [Widget cơ bản](https://github.com/S4ltF1sh/TodoApp#widget-c%C6%A1-b%E1%BA%A3n) | ![Widget Cơ bản](https://user-images.githubusercontent.com/84552830/192385968-15dec4bd-3ac2-48a7-9cb5-52823c4ca911.gif) |
 
 # Chi tiết chức năng:
 ## Tạo mới Todo:
