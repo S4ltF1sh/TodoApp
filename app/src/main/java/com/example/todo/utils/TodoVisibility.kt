@@ -1,6 +1,7 @@
 package com.example.todo.utils
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.graphics.Paint
 import android.view.View
 import com.example.todo.R
@@ -34,8 +35,12 @@ object TodoVisibility {
                 tvNote.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 tvNote.isEnabled = false
                 tvTime.isEnabled = false
+                tvTime.setTextColor(Color.parseColor("#616161"))
                 checkboxTodoStatus.setButtonDrawable(R.drawable.ic_restore)
             }
+        } else {
+            if (currentTodo.alarmDate != null && currentTodo.alarmDate!! < TimeUtil.currentTime())
+                itemTodoBinding.tvTime.setTextColor(Color.parseColor("#ef476f"))
         }
     }
 }

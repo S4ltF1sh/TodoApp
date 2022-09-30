@@ -13,3 +13,5 @@ data class Group(
     @ColumnInfo(name = "group_edit_date")
     override var editDate: Date?,
 ) : Serializable, Item(editDate)
+
+

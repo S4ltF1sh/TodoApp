@@ -66,6 +66,7 @@
             android:drawablePadding="@dimen/tiny_margin"
             android:drawableTint="?android:attr/textColorPrimary"
             android:text="@string/default_time"
+            android:textColor="@color/white"
             android:textStyle="bold" />
     </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

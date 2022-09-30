@@ -21,7 +21,7 @@ class SearchViewModel(private val todoRepository: TodoRepository) : ViewModel() 
         }
     }
 
-    private val searchLiveData = MutableLiveData<List<Todo>>()
+    private val searchLiveData = MutableLiveData<List<Todo>?>()
     private val searchData = mutableListOf<Todo>()
 
     fun getSearchLiveData() = searchLiveData
@@ -37,4 +37,10 @@ class SearchViewModel(private val todoRepository: TodoRepository) : ViewModel() 
     }
 
     private fun getTodosByKeyWord(keyWord: String) = todoRepository.getByKeyWord(keyWord)
+
+    override fun onCleared() {
+        searchData.clear()
+        searchLiveData.value = null
+        super.onCleared()
+    }
 }

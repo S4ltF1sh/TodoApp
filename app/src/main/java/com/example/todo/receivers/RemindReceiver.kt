@@ -17,10 +17,7 @@ import androidx.navigation.NavDeepLinkBuilder
 import com.example.todo.common.Const
 import com.example.todo.common.Const.ACTION_VIEW_TODO_FROM_WIDGET
 import com.example.todo.common.Const.CHANNEL_ID
-import com.example.todo.common.TodoStatus
 import com.example.todo.common.ViewTodoStatus
-import com.example.todo.data.MyDatabase
-
 
 @RequiresApi(Build.VERSION_CODES.O)
 class RemindReceiver : BroadcastReceiver() {

@@ -18,7 +18,7 @@ object Shortcuts {
     @RequiresApi(Build.VERSION_CODES.N_MR1)
     fun setUp(context: Context) {
         val shortcutManager =
-            getSystemService<ShortcutManager>(context, ShortcutManager::class.java)
+            getSystemService(context, ShortcutManager::class.java)
 
         val intent = Intent(
             Intent.ACTION_VIEW,

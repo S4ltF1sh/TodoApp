@@ -35,7 +35,7 @@ class GroupViewModel(
         }
     }
 
-    private val groupWithTodosLiveData: MutableLiveData<GroupWithTodos> = MutableLiveData()
+    private val groupWithTodosLiveData: MutableLiveData<GroupWithTodos?> = MutableLiveData()
     private lateinit var groupWithTodos: GroupWithTodos
     private var editMode = ItemsEditMode.NONE
     private val selectedItems = mutableListOf<Item>()
@@ -57,7 +57,7 @@ class GroupViewModel(
         groupRepository.updateGroupByTitle(title, newTitle, newEditDate)
     }
 
-    fun getGroupWithTodosLiveData(): MutableLiveData<GroupWithTodos> = groupWithTodosLiveData
+    fun getGroupWithTodosLiveData(): MutableLiveData<GroupWithTodos?> = groupWithTodosLiveData
     fun getTitle(): String = groupWithTodos.group?.title ?: ""
     fun getTodos(): List<Todo> = groupWithTodos.todos
 
@@ -148,5 +148,11 @@ class GroupViewModel(
     fun addNewGroup(newGroupName: String) = viewModelScope.launch {
         if (newGroupName != "" && groupRepository.getGroupByTitle(newGroupName) == null)
             groupRepository.addGroup(Group(newGroupName, TimeUtil.currentTime()))
+    }
+
+    override fun onCleared() {
+        groupWithTodosLiveData.value = null
+        selectedItems.clear()
+        super.onCleared()
     }
 }

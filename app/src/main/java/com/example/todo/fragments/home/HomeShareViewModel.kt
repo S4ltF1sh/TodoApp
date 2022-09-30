@@ -19,8 +19,11 @@ class HomeShareViewModel(
     private val addRemind: (Todo) -> Unit,
     private val removeRemind: (Todo) -> Unit
 ) : ViewModel() {
-    private val onGoingFragmentLiveData: MutableLiveData<List<Item>> = MutableLiveData<List<Item>>()
-    private val garbageFragmentLiveData: MutableLiveData<List<Todo>> = MutableLiveData<List<Todo>>()
+    companion object {
+        val onGoingFragmentLiveData: MutableLiveData<List<Item>?> = MutableLiveData<List<Item>?>()
+        val garbageFragmentLiveData: MutableLiveData<List<Todo>?> = MutableLiveData<List<Todo>?>()
+    }
+
     private val items = mutableListOf<Item>()
     private val todos = mutableListOf<Todo>()
     private var editMode = ItemsEditMode.NONE
@@ -54,7 +57,7 @@ class HomeShareViewModel(
     }
 
     //GoingFragment:
-    fun getOnGoingFragmentLiveData(): LiveData<List<Item>> = onGoingFragmentLiveData
+    fun getOnGoingFragmentLiveData(): MutableLiveData<List<Item>?> = onGoingFragmentLiveData
 
     fun updateOnGoingFragmentData() {
         items.clear()
@@ -132,7 +135,7 @@ class HomeShareViewModel(
     }
 
     //GarbageFragment:
-    fun getGarbageFragmentLiveData(): LiveData<List<Todo>> = garbageFragmentLiveData
+    fun getGarbageFragmentLiveData(): MutableLiveData<List<Todo>?> = garbageFragmentLiveData
 
     fun updateGarbageFragmentData() {
         todos.clear()
@@ -199,4 +202,13 @@ class HomeShareViewModel(
     }
 
     fun getAllGroup(): List<Group> = groupRepository.getAll()
+
+    override fun onCleared() {
+        items.clear()
+        todos.clear()
+        selectedItems.clear()
+        onGoingFragmentLiveData.value = null
+        garbageFragmentLiveData.value = null
+        super.onCleared()
+    }
 }

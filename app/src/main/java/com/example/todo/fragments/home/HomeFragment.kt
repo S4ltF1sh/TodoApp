@@ -259,7 +259,6 @@ class HomeFragment : Fragment(), OnGoingFragment.OnGoingBotNavListener,
     }
 
     override fun onDestroyView() {
-        binding.botNav.clearAnimation()
         Log.d("HomeFrag", "onDestroyView: ")
         super.onDestroyView()
     }

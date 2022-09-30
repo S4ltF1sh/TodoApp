@@ -2,6 +2,7 @@ package com.example.todo.fragments.todo
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -121,6 +122,10 @@ class TodoFragment : Fragment() {
             todoViewModel.getTodoLiveData().observe(viewLifecycleOwner) {
                 binding.apply {
                     chipTime.text = TimeUtil.format(currentAlarmDate)
+                    if (currentAlarmDate != null && currentAlarmDate!! < TimeUtil.currentTime())
+                        chipTime.setTextColor(Color.parseColor("#ef476f"))
+                    else
+                        chipTime.setTextColor(Color.parseColor("#FFFFFF"))
                     chipGroup.text =
                         if (currentGroupName != "") currentGroupName else "Chưa phân loại"
                     edtTitle.setText(todoViewModel.getTitle())
@@ -154,9 +159,18 @@ class TodoFragment : Fragment() {
         binding.apply {
             toolBar.setNavigationOnClickListener { backButtonClicked() }
             toolBar.setOnMenuItemClickListener(onMenuItemClickListener())
-            chipTime.setOnClickListener { pickTime() }
-            chipTime.setOnCloseIconClickListener { setNewTime(null) }
-            chipGroup.setOnClickListener { pickGroup() }
+            chipTime.setOnClickListener {
+                pickTime()
+                enterEditMenu()
+            }
+            chipTime.setOnCloseIconClickListener {
+                setNewTime(null)
+                updateCurrentTodo()
+            }
+            chipGroup.setOnClickListener {
+                pickGroup()
+                enterEditMenu()
+            }
         }
     }
 
@@ -219,7 +233,10 @@ class TodoFragment : Fragment() {
         when (item.itemId) {
             R.id.itemSave -> saveButtonClicked()
             R.id.itemShare -> shareButtonClicked()
-            R.id.itemMoveTo -> pickGroup()
+            R.id.itemMoveTo -> {
+                pickGroup()
+                enterEditMenu()
+            }
             R.id.itemDelete -> {
                 delete1ButtonClicked()
                 findNavController().popBackStack()
@@ -246,14 +263,16 @@ class TodoFragment : Fragment() {
 
     private fun saveButtonClicked() {
         when (todoViewMode) {
-            ViewTodoStatus.EDIT_MODE -> {
-                updateCurrentTodo()
+            ViewTodoStatus.ADD_MODE -> {
+                if (!isEmptyTodo())
+                    addNewTodo()
                 enterViewMode()
             }
-            ViewTodoStatus.ADD_MODE -> {
-                enterViewMenu()
+            else -> {
+                if (!isEmptyTodo())
+                    updateCurrentTodo()
+                enterViewMode()
             }
-            else -> {}
         }
         binding.edtTitle.clearFocus()
         binding.edtNote.clearFocus()
@@ -261,17 +280,6 @@ class TodoFragment : Fragment() {
     }
 
     private fun backButtonClicked() {
-        when (todoViewMode) {
-            ViewTodoStatus.ADD_MODE -> {
-                if (!isEmptyTodo())
-                    addNewTodo()
-            }
-            else -> {
-                if (!isEmptyTodo())
-                    updateCurrentTodo()
-            }
-        }
-
         binding.toolBar.findNavController().popBackStack()
     }
 
@@ -374,17 +382,14 @@ class TodoFragment : Fragment() {
                 editDate = editDate,
             )
         todoViewModel.setData(newTodo)
-        todoViewModel.addNewTodo(newTodo)
-        addRemind()
+        addRemind(todoViewModel.addNewTodo(newTodo))
         updateWidgets()
         Toasts.addedNewTodoToast(context)
     }
 
-    private fun addRemind() {
-        val todos = todoRepository.getAll()
-        val size = todos.size
-        if (currentAlarmDate != null) {
-            (activity as MainActivity).addRemind(todos[size - 1])
+    private fun addRemind(newTodo: Todo) {
+        if (newTodo.alarmDate != null) {
+            (activity as MainActivity).addRemind(newTodo)
         }
     }
 

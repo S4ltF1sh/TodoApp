@@ -3,9 +3,11 @@ package com.example.todo.adapters.forRV
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipDescription
+import android.graphics.Color
 import android.graphics.Rect
 import android.view.MotionEvent
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView

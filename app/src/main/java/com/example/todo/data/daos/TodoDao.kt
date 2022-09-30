@@ -44,5 +44,5 @@ interface TodoDao {
     fun removeTodo(todo: Todo)
 
     @Insert
-    fun add(todo: Todo)
+    fun add(todo: Todo): Long
 }

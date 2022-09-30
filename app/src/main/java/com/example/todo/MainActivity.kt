@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var alarmManager: AlarmManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.i("MainActivity", "onCreate")
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
     }
 
+    @SuppressLint("MissingPermission")
     fun addRemind(todo: Todo) {
         val alarmDate = todo.alarmDate
         if (alarmDate != null && alarmDate.time > TimeUtil.currentTime()!!.time) {

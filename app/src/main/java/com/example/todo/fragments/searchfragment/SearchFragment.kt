@@ -50,11 +50,13 @@ class SearchFragment : Fragment() {
         binding.edtSearchBar.requestFocus()
 
         searchViewModel.getSearchLiveData().observe(viewLifecycleOwner) {
-            adapter.setData(it)
-            if (it.isNotEmpty())
-                binding.tvShrugFace.visibility = View.GONE
-            else
-                binding.tvShrugFace.visibility = View.VISIBLE
+            if (it != null) {
+                adapter.setData(it)
+                if (it.isNotEmpty())
+                    binding.tvShrugFace.visibility = View.GONE
+                else
+                    binding.tvShrugFace.visibility = View.VISIBLE
+            }
         }
 
         binding.edtSearchBar.doAfterTextChanged {

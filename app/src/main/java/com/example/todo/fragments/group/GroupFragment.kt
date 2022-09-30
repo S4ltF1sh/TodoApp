@@ -108,13 +108,16 @@ class GroupFragment : Fragment() {
         groupViewModel.setData(arguments?.getString(Const.GROUP_TITLE_NEED_TO_VIEW) ?: "")
         groupViewModel.updateData()
         groupViewModel.getGroupWithTodosLiveData().observe(viewLifecycleOwner) {
-            binding.tvTitle.text = it.group?.title
-            val todos = it.todos.toMutableList().sortedBy { todo -> todo.editDate }
-            adapter.setData(todos)
-            if (todos.isNotEmpty())
-                binding.tvShrugFace.visibility = View.GONE
-            else
-                binding.tvShrugFace.visibility = View.VISIBLE
+            if (it != null){
+                binding.tvTitle.text = it.group!!.title
+                val todos = it.todos.toMutableList().sortedBy { todo -> todo.editDate }
+                adapter.setData(todos)
+                if (todos.isNotEmpty())
+                    binding.tvShrugFace.visibility = View.GONE
+                else
+                    binding.tvShrugFace.visibility = View.VISIBLE
+            }
+
         }
 
     }

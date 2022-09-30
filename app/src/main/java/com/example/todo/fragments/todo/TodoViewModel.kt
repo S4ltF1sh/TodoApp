@@ -87,13 +87,15 @@ class TodoViewModel(
         todoRepository.updateTodo(todo)
     }
 
-    fun addNewTodo(newTodo: Todo) {
-        todoRepository.addTodo(newTodo)
-        todo = newTodo
-        todoLiveData.value = todo
+    fun addNewTodo(newTodo: Todo): Todo {
+        val id = todoRepository.addTodo(newTodo).toInt()
+        newTodo.id = id
+        setData(newTodo)
 
         Log.d("id newTodo", newTodo.id.toString())
         Log.d("id current Todo", todo.id.toString())
+
+        return newTodo
     }
 
     fun delete2Todo() {

@@ -5,7 +5,7 @@ import com.example.todo.data.daos.TodoDao
 import com.example.todo.common.TodoStatus
 
 class TodoRepository(private val todoDao: TodoDao) {
-    fun addTodo(todo: Todo) = todoDao.add(todo)
+    fun addTodo(todo: Todo): Long = todoDao.add(todo)
 
     fun removeTodo(todo: Todo) = todoDao.removeTodo(todo)
 

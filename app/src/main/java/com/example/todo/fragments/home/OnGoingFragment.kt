@@ -72,11 +72,13 @@ class OnGoingFragment(
 
         binding.rvItemList.adapter = adapter
         homeShareViewModel.getOnGoingFragmentLiveData().observe(viewLifecycleOwner) {
-            adapter.setData(it)
-            if (it.isNotEmpty())
-                binding.tvShrugFace.visibility = View.GONE
-            else
-                binding.tvShrugFace.visibility = View.VISIBLE
+            if(it!=null) {
+                adapter.setData(it)
+                if (it.isNotEmpty())
+                    binding.tvShrugFace.visibility = View.GONE
+                else
+                    binding.tvShrugFace.visibility = View.VISIBLE
+            }
         }
 
         setOnClick()

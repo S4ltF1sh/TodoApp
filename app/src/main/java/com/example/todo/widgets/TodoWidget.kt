@@ -16,6 +16,7 @@ import com.example.todo.common.TodoStatus
 import com.example.todo.common.ViewTodoStatus
 import com.example.todo.data.MyDatabase
 import com.example.todo.data.models.todo.Todo
+import com.example.todo.utils.TimeUtil
 
 
 class TodoWidget : AppWidgetProvider() {
@@ -61,7 +62,7 @@ class TodoWidget : AppWidgetProvider() {
                 val todo = todos[0]
                 val title = if (todo?.title != "") todo?.title else todo.note
                 setTextViewText(R.id.tvTitle1, title)
-                if (todo!!.alarmDate != null)
+                if (todo!!.alarmDate != null && todo.alarmDate!! > TimeUtil.currentTime())
                     setViewVisibility(R.id.imvClock1, View.VISIBLE)
                 else
                     setViewVisibility(R.id.imvClock1, View.GONE)
@@ -76,7 +77,7 @@ class TodoWidget : AppWidgetProvider() {
                 val todo = todos[1]
                 val title = if (todo?.title != "") todo?.title else todo.note
                 setTextViewText(R.id.tvTitle2, title)
-                if (todo!!.alarmDate != null)
+                if (todo!!.alarmDate != null && todo.alarmDate!! > TimeUtil.currentTime())
                     setViewVisibility(R.id.imvClock2, View.VISIBLE)
                 else
                     setViewVisibility(R.id.imvClock2, View.GONE)
@@ -84,14 +85,13 @@ class TodoWidget : AppWidgetProvider() {
                     R.id.todo2,
                     getPendingIntent(context, ViewTodoStatus.VIEW_MODE, todos[1])
                 )
-            }
-            else setViewVisibility(R.id.todo2, View.GONE)
+            } else setViewVisibility(R.id.todo2, View.GONE)
             if (size >= 3) {
                 setViewVisibility(R.id.todo3, View.VISIBLE)
                 val todo = todos[2]
                 val title = if (todo?.title != "") todo?.title else todo.note
                 setTextViewText(R.id.tvTitle3, title)
-                if (todo!!.alarmDate != null)
+                if (todo!!.alarmDate != null && todo.alarmDate!! > TimeUtil.currentTime())
                     setViewVisibility(R.id.imvClock3, View.VISIBLE)
                 else
                     setViewVisibility(R.id.imvClock3, View.GONE)
@@ -99,14 +99,13 @@ class TodoWidget : AppWidgetProvider() {
                     R.id.todo3,
                     getPendingIntent(context, ViewTodoStatus.VIEW_MODE, todos[2])
                 )
-            }
-            else setViewVisibility(R.id.todo3, View.GONE)
+            } else setViewVisibility(R.id.todo3, View.GONE)
             if (size >= 4) {
                 setViewVisibility(R.id.todo4, View.VISIBLE)
                 val todo = todos[3]
                 val title = if (todo?.title != "") todo?.title else todo.note
                 setTextViewText(R.id.tvTitle4, title)
-                if (todo!!.alarmDate != null)
+                if (todo!!.alarmDate != null && todo.alarmDate!! > TimeUtil.currentTime())
                     setViewVisibility(R.id.imvClock4, View.VISIBLE)
                 else
                     setViewVisibility(R.id.imvClock4, View.GONE)
@@ -114,8 +113,7 @@ class TodoWidget : AppWidgetProvider() {
                     R.id.todo4,
                     getPendingIntent(context, ViewTodoStatus.VIEW_MODE, todos[3])
                 )
-            }
-            else setViewVisibility(R.id.todo4, View.GONE)
+            } else setViewVisibility(R.id.todo4, View.GONE)
         }
 
         appWidgetManager.updateAppWidget(appWidgetId, remoteViews)
