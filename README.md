@@ -14,10 +14,10 @@
 | [Widget cơ bản](https://github.com/S4ltF1sh/TodoApp#widget-c%C6%A1-b%E1%BA%A3n) | ![Widget Cơ bản](https://user-images.githubusercontent.com/84552830/192385968-15dec4bd-3ac2-48a7-9cb5-52823c4ca911.gif) |
 
 # Chi tiết chức năng:
-## Tạo mới Todo:
+### Tạo mới Todo:
 1. Nhấn vào FAB ở góc phải dưới màn hình để tạo mới Todo.
 
-3. Nhấn vào ChipTime để chọn thời gian nhắc nhở.
+2. Nhấn vào ChipTime để chọn thời gian nhắc nhở.
 
 ![image](https://user-images.githubusercontent.com/84552830/192391308-6199414a-678c-41ce-a5e9-a94715e662fb.png)
 
@@ -37,11 +37,11 @@
 
 4. Khi nhấn Back trên thanh điều hướng sẽ thêm Todo mới vào Database.
 
-## Sửa Todo:
+### Sửa Todo:
 - Nhấn vào CardView Todo để vào xem và sửa Todo, các cập nhật sẽ được trigger khi nhấn Back trên thanh điều hướng.
 - Khi Title và Not đều rỗng thì sẽ không cập nhật Todo (quay lại trạng thái vừa mở).
 
-## Xoá và khôi phục Todo:
+### Xoá và khôi phục Todo:
 - Khi nhấn vào checkbox để hoàn thành hoặc xoá Todo đều sẽ đưa Todo vào thùng rác.
 > Trên thực tế thì TodoStatus sẽ được chuyển đổi từ ON_GOING => DELETED or DONE (thùng rác sẽ load các Todo có TodoStatus là DELETED or DONE)
 
@@ -54,7 +54,7 @@
 > Tạo nhắc nhở mới nếu có AlarmTime != null.
 > Tạo Group mới nếu GroupName != "".
 
-## Tìm kiếm Todo:
+### Tìm kiếm Todo:
 - Sử dụng @Query và LIKE kết + doAfterTextChange + handle().delay để search:
 > Search bar thực tế là Edittext
 > handle().delay để tránh doAfterTextChange check liên tục.
@@ -63,12 +63,12 @@
 
 ![image](https://user-images.githubusercontent.com/84552830/192393835-2247c2cd-42dd-4c0d-a702-372275094543.png)
 
-## Chia sẻ Todo:
+### Chia sẻ Todo:
 - Sử dụng ImplictIntent với ACTION_SEND để gửi Title và Note đi.
 
 ![image](https://user-images.githubusercontent.com/84552830/192394181-6a4a0546-4fb9-46e7-b5c9-f2e26a5cc28b.png)
 
-## Một số thao tác với Group:
+### Một số thao tác với Group:
 - Group có thể đổi tên.
 
 - Xoá Group: 
@@ -79,13 +79,19 @@
 - Nhấn giữ Todo và kéo thả vào Group để thêm Todo từ ngoài màn hình vào 1 Group đã tồn tại.
 > Chuyển groupName thành Title của Group tương ứng.
 
-## Multi Select:
+### Multi Select:
 - Có thể chọn nhiều Todo và Group 1 lúc để thực hiện các thao tác:
 
-## Thêm và nhận nhắc nhở:
+- Sử dụng 1 List để chứa các Item được chọn.
+
+- Sử dụng 1 biến để lưu trạng thái khi nào tiến vào chế độ Multi Select được đặt ở trong ViewModel.
+
+### Thêm và nhận nhắc nhở:
 - Chỉ cần chọn thời gian nhắc nhở thì khi nhấn Back trên thanh điều hướng, ngay lập tức sẽ sử dụng [AlarmManager]() để thêm nhắc nhở.
 
 - Thông báo đăng ký Channel với Important.HIGHT để hiện Headup trên màn hình.
+
+- Sử dụng id của Todo để làm id cho PendingIntent khi tạo 1 sự kiện bằng AlarmManager, khi xoá cũng xoá theo id.
 
 ![image](https://user-images.githubusercontent.com/84552830/192395302-fa3a0ecd-0b62-44b9-a30b-51a83849d33b.png)
 
@@ -101,7 +107,7 @@
 
 ![image](https://user-images.githubusercontent.com/84552830/192396077-696a53a9-a45d-411e-abc6-16661279b974.png)
 
-## Widget cơ bản:
+### Widget cơ bản:
 - Widget bao gồm 5 phần:
 > Phần tiêu đề Widget và dấu + (khi nhấn vào sẽ mở TodoFragment bằng cách dùng DeepLink cho phép tạo mới Todo)
 > 4 phần còn lại là 4 Todo được mở gần nhất, có thể ấn vào để xem Todo tương tự dấu +.
@@ -151,8 +157,3 @@
 ![image](https://user-images.githubusercontent.com/84552830/192532769-4d1685a5-bc0d-418d-9931-cf20b746598c.png)
 
 > Làm vậy để từ HomeFragment hay 2 Fragment kia có thể update 2 Fragment còn lại khi thay đổi LiveData tương ứng (do có chung ViewModelStoreOwner là HomeFragment)
-
-# AlarmManager:
-
-
-# AppShortcut:
